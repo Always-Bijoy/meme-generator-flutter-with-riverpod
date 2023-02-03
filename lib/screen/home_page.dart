@@ -3,6 +3,7 @@ import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:lottie/lottie.dart';
+import 'package:meme_generator/screen/dummy/text_over_image.dart';
 
 import '../riverpod_/home_provider.dart';
 
@@ -165,6 +166,15 @@ class HomePage extends ConsumerWidget {
                       },
                       child: const Text('GENERATE')),
                 ),
+                ElevatedButton(onPressed: (){
+                  // Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) {
+                  //   return const TextOverImage();
+                  // }));
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const TextOverImage()),
+                  );
+                }, child: const Text('Dragggable Text')),
                 provider.ssImage != null
                     ? Image.file(provider.ssImage!)
                     : Container(),
